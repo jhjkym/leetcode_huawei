@@ -1,0 +1,9 @@
+# 编译输出统一放在 build 目录。
+/build/
+
+# 常见编译产物。
+*.exe
+*.out
+*.o
+*.obj
+a.out

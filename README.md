@@ -12,6 +12,7 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 1. 两数之和 | 哈希表查找 | `unordered_map` | [C++](algorithms/hash_table/001_two_sum.cpp) | [题解总结](algorithms/hash_table/001_two_sum.md) |
 | 128. 最长连续序列 | 哈希表 | `unordered_set` | [C++](algorithms/hash_table/128_longest_consecutive_sequence.cpp) | [题解总结](algorithms/hash_table/128_longest_consecutive_sequence.md) |
 | 554. 砖墙 | 前缀和、哈希计数（不熟悉，待复习） | 二维数组、哈希表 | [C++](algorithms/hash_table/554_brick_wall.cpp) | [题解总结](algorithms/hash_table/554_brick_wall.md) |
+| 36. 有效的数独 | 直接寻址判重（不会，待背诵） | 行、列、宫布尔数组 | [C++](algorithms/hash_table/036_valid_sudoku.cpp) | [题解总结](algorithms/hash_table/036_valid_sudoku.md) |
 | 215. 数组中的第K个最大元素 | 堆（快速选择待练习） | 小根堆 `priority_queue` | [C++](algorithms/quickselect/215_kth_largest_element_in_an_array.cpp) | [题解总结](algorithms/quickselect/215_kth_largest_element_in_an_array.md) |
 | 15. 三数之和 | 排序、双指针 | 数组 | [C++](algorithms/sorting_greedy/015_three_sum.cpp) | [题解总结](algorithms/sorting_greedy/015_three_sum.md) |
 | 16. 最接近的三数之和 | 排序、双指针 | 数组 | [C++](algorithms/sorting_greedy/016_three_sum_closest.cpp) | [题解总结](algorithms/sorting_greedy/016_three_sum_closest.md) |
@@ -20,6 +21,7 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 46. 全排列 | 回溯 | 路径数组、使用标记 | [C++](algorithms/backtracking/046_permutations.cpp) | [题解总结](algorithms/backtracking/046_permutations.md) |
 | 17. 电话号码的字母组合 | 回溯 | 字母映射、路径字符串 | [C++](algorithms/backtracking/017_letter_combinations_of_a_phone_number.cpp) | [题解总结](algorithms/backtracking/017_letter_combinations_of_a_phone_number.md) |
 | 54. 螺旋矩阵 | 矩阵边界模拟 | 二维数组、结果数组 | [C++](algorithms/matrix_simulation/054_spiral_matrix.cpp) | [题解总结](algorithms/matrix_simulation/054_spiral_matrix.md) |
+| 48. 旋转图像 | 矩阵原地变换（不熟，待复习） | 二维数组 | [C++](algorithms/matrix_simulation/048_rotate_image.cpp) | [题解总结](algorithms/matrix_simulation/048_rotate_image.md) |
 | 5. 最长回文子串 | 中心扩展、双指针 | 字符串 | [C++](algorithms/center_expansion/005_longest_palindromic_substring.cpp) | [题解总结](algorithms/center_expansion/005_longest_palindromic_substring.md) |
 | 6. Z 字形变换 | 字符串模拟（不会，背诵模板） | 按行保存的字符串数组 | [C++](algorithms/string_simulation/006_zigzag_conversion.cpp) | [题解总结](algorithms/string_simulation/006_zigzag_conversion.md) |
 | 14. 最长公共前缀 | 字符串扫描（不会，背诵模板） | 字符串数组 | [C++](algorithms/string_simulation/014_longest_common_prefix.cpp) | [题解总结](algorithms/string_simulation/014_longest_common_prefix.md) |
@@ -28,8 +30,13 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 42. 接雨水 | 双指针、前后缀最大值 | 数组 | [C++](algorithms/two_pointers/042_trapping_rain_water.cpp) | [题解总结](algorithms/two_pointers/042_trapping_rain_water.md) |
 | 125. 验证回文串 | 双指针（isalnum、tolower 没用过，待复习） | 字符串 | [C++](algorithms/two_pointers/125_valid_palindrome.cpp) | [题解总结](algorithms/two_pointers/125_valid_palindrome.md) |
 | 56. 合并区间 | 排序、贪心 | 区间数组 | [C++](algorithms/sorting_greedy/056_merge_intervals.cpp) | [题解总结](algorithms/sorting_greedy/056_merge_intervals.md) |
+| 57. 插入区间 | 有序区间扫描、合并（不会，待背诵） | 区间数组 | [C++](algorithms/sorting_greedy/057_insert_interval.cpp) | [题解总结](algorithms/sorting_greedy/057_insert_interval.md) |
+| 45. 跳跃游戏 II | 贪心（不熟，待复习） | 数组、边界变量 | [C++](algorithms/sorting_greedy/045_jump_game_ii.cpp) | [题解总结](algorithms/sorting_greedy/045_jump_game_ii.md) |
 | 70. 爬楼梯 | 动态规划 | 状态数组或滚动变量 | [C++](algorithms/dynamic_programming/070_climbing_stairs.cpp) | [题解总结](algorithms/dynamic_programming/070_climbing_stairs.md) |
+| 63. 不同路径 II | 动态规划（不会，待背诵） | 一维状态数组 | [C++](algorithms/dynamic_programming/063_unique_paths_ii.cpp) | [题解总结](algorithms/dynamic_programming/063_unique_paths_ii.md) |
+| 66. 加一 | 数组模拟（不会，待背诵） | `vector<int>` | [C++](algorithms/array_simulation/066_plus_one.cpp) | [题解总结](algorithms/array_simulation/066_plus_one.md) |
 | 93. 复原 IP 地址 | 回溯分割（不会，背诵模板） | 路径段数组、字符串 | [C++](algorithms/backtracking/093_restore_ip_addresses.cpp) | [题解总结](algorithms/backtracking/093_restore_ip_addresses.md) |
+| 79. 单词搜索 | DFS、回溯（不会，待背诵） | 二维网格、递归栈 | [C++](algorithms/backtracking/079_word_search.cpp) | [题解总结](algorithms/backtracking/079_word_search.md) |
 | 72. 编辑距离 | 二维动态规划（细节不熟，待复习） | 二维状态数组 | [C++](algorithms/dynamic_programming/072_edit_distance.cpp) | [题解总结](algorithms/dynamic_programming/072_edit_distance.md) |
 | 198. 打家劫舍 | 动态规划 | 状态数组或滚动变量 | [C++](algorithms/dynamic_programming/198_house_robber.cpp) | [题解总结](algorithms/dynamic_programming/198_house_robber.md) |
 | 179. 最大数 | 贪心、自定义排序比较器（不会，背诵模板） | 字符串数组 | [C++](algorithms/sorting_greedy/179_largest_number.cpp) | [题解总结](algorithms/sorting_greedy/179_largest_number.md) |

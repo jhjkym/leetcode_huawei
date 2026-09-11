@@ -4,14 +4,28 @@ using namespace std;
 // 6. Z 字形变换
 // 算法：字符串模拟；数据结构：按行保存的字符串数组。
 // 将字符串按指定行数排列成 Z 字形，再从上到下逐行读取。
-// 填写 convert 后，直接运行即可执行 main 中的固定测例。
+// 背诵模板：按行存字符 + 首尾转向 + 按行拼接。
+// 掌握状态：不会，待复习背诵。
 
 class Solution {
 public:
     string convert(string s, int numRows) {
-        // TODO: 在这里填写核心实现。
-        
-        return {}; // 占位返回值，完成实现后替换。
+        if (numRows == 1 || numRows >= static_cast<int>(s.size())) return s;
+
+        vector<string> rows(numRows);
+        int currentRow = 0;
+        int direction = 1;
+
+        for (char c : s) {
+            rows[currentRow] += c;                 // 先放字符
+            if (currentRow == 0) direction = 1;    // 顶行向下
+            if (currentRow == numRows - 1) direction = -1; // 底行向上
+            currentRow += direction;              // 再移动行号
+        }
+
+        string result;
+        for (const string& row : rows) result += row;
+        return result;
     }
 };
 

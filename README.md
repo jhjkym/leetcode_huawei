@@ -15,7 +15,9 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 46. 全排列 | 回溯 | 路径数组、使用标记 | [C++](algorithms/backtracking/046_permutations.cpp) | [题解总结](algorithms/backtracking/046_permutations.md) |
 | 54. 螺旋矩阵 | 矩阵边界模拟 | 二维数组、结果数组 | [C++](algorithms/matrix_simulation/054_spiral_matrix.cpp) | [题解总结](algorithms/matrix_simulation/054_spiral_matrix.md) |
 | 5. 最长回文子串 | 中心扩展、双指针 | 字符串 | [C++](algorithms/center_expansion/005_longest_palindromic_substring.cpp) | [题解总结](algorithms/center_expansion/005_longest_palindromic_substring.md) |
-| 6. Z 字形变换 | 字符串模拟 | 按行保存的字符串数组 | [C++](algorithms/string_simulation/006_zigzag_conversion.cpp) | [题解总结](algorithms/string_simulation/006_zigzag_conversion.md) |
+| 6. Z 字形变换 | 字符串模拟（不会，背诵模板） | 按行保存的字符串数组 | [C++](algorithms/string_simulation/006_zigzag_conversion.cpp) | [题解总结](algorithms/string_simulation/006_zigzag_conversion.md) |
+| 14. 最长公共前缀 | 字符串扫描（不会，背诵模板） | 字符串数组 | [C++](algorithms/string_simulation/014_longest_common_prefix.cpp) | [题解总结](algorithms/string_simulation/014_longest_common_prefix.md) |
+| 43. 字符串相乘 | 竖式乘法模拟（不会，背诵模板） | 数位数组 | [C++](algorithms/string_simulation/043_multiply_strings.cpp) | [题解总结](algorithms/string_simulation/043_multiply_strings.md) |
 | 11. 盛最多水的容器 | 双指针 | 数组 | [C++](algorithms/two_pointers/011_container_with_most_water.cpp) | [题解总结](algorithms/two_pointers/011_container_with_most_water.md) |
 | 42. 接雨水 | 双指针、前后缀最大值 | 数组 | [C++](algorithms/two_pointers/042_trapping_rain_water.cpp) | [题解总结](algorithms/two_pointers/042_trapping_rain_water.md) |
 | 56. 合并区间 | 排序、贪心 | 区间数组 | [C++](algorithms/sorting_greedy/056_merge_intervals.cpp) | [题解总结](algorithms/sorting_greedy/056_merge_intervals.md) |
@@ -107,6 +109,22 @@ g++ -std=c++17 -O2 algorithms/center_expansion/005_longest_palindromic_substring
 mkdir -p build
 g++ -std=c++17 -O2 algorithms/string_simulation/006_zigzag_conversion.cpp -o build/006
 ./build/006
+```
+
+第 14 题的编译与运行命令：
+
+```bash
+mkdir -p build
+g++ -std=c++17 -O2 algorithms/string_simulation/014_longest_common_prefix.cpp -o build/014
+./build/014
+```
+
+第 43 题的编译与运行命令：
+
+```bash
+mkdir -p build
+g++ -std=c++17 -O2 algorithms/string_simulation/043_multiply_strings.cpp -o build/043
+./build/043
 ```
 
 第 11 题的编译与运行命令：

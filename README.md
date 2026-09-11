@@ -8,11 +8,17 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 题目 | 算法 | 数据结构 | 代码 | 总结 |
 | --- | --- | --- | --- | --- |
 | 3. 无重复字符的最长子串 | 滑动窗口、双指针 | 哈希表 | [C++](algorithms/sliding_window/003_longest_substring_without_repeating_characters.cpp) | [题解总结](algorithms/sliding_window/003_longest_substring_without_repeating_characters.md) |
+| 239. 滑动窗口最大值 | 滑动窗口、单调队列（忘记做法，待背诵） | 双端队列 `deque` | [C++](algorithms/monotonic_queue/239_sliding_window_maximum.cpp) | [题解总结](algorithms/monotonic_queue/239_sliding_window_maximum.md) |
 | 1. 两数之和 | 哈希表查找 | `unordered_map` | [C++](algorithms/hash_table/001_two_sum.cpp) | [题解总结](algorithms/hash_table/001_two_sum.md) |
+| 128. 最长连续序列 | 哈希表 | `unordered_set` | [C++](algorithms/hash_table/128_longest_consecutive_sequence.cpp) | [题解总结](algorithms/hash_table/128_longest_consecutive_sequence.md) |
+| 554. 砖墙 | 前缀和、哈希计数（不熟悉，待复习） | 二维数组、哈希表 | [C++](algorithms/hash_table/554_brick_wall.cpp) | [题解总结](algorithms/hash_table/554_brick_wall.md) |
+| 215. 数组中的第K个最大元素 | 堆（快速选择待练习） | 小根堆 `priority_queue` | [C++](algorithms/quickselect/215_kth_largest_element_in_an_array.cpp) | [题解总结](algorithms/quickselect/215_kth_largest_element_in_an_array.md) |
 | 15. 三数之和 | 排序、双指针 | 数组 | [C++](algorithms/sorting_greedy/015_three_sum.cpp) | [题解总结](algorithms/sorting_greedy/015_three_sum.md) |
+| 16. 最接近的三数之和 | 排序、双指针 | 数组 | [C++](algorithms/sorting_greedy/016_three_sum_closest.cpp) | [题解总结](algorithms/sorting_greedy/016_three_sum_closest.md) |
 | 20. 有效的括号 | 栈匹配 | `stack<char>` | [C++](algorithms/stack/020_valid_parentheses.cpp) | [题解总结](algorithms/stack/020_valid_parentheses.md) |
 | 394. 字符串解码 | 栈解析（不会，背诵模板） | 数字栈、字符串栈 | [C++](algorithms/stack/394_decode_string.cpp) | [题解总结](algorithms/stack/394_decode_string.md) |
 | 46. 全排列 | 回溯 | 路径数组、使用标记 | [C++](algorithms/backtracking/046_permutations.cpp) | [题解总结](algorithms/backtracking/046_permutations.md) |
+| 17. 电话号码的字母组合 | 回溯 | 字母映射、路径字符串 | [C++](algorithms/backtracking/017_letter_combinations_of_a_phone_number.cpp) | [题解总结](algorithms/backtracking/017_letter_combinations_of_a_phone_number.md) |
 | 54. 螺旋矩阵 | 矩阵边界模拟 | 二维数组、结果数组 | [C++](algorithms/matrix_simulation/054_spiral_matrix.cpp) | [题解总结](algorithms/matrix_simulation/054_spiral_matrix.md) |
 | 5. 最长回文子串 | 中心扩展、双指针 | 字符串 | [C++](algorithms/center_expansion/005_longest_palindromic_substring.cpp) | [题解总结](algorithms/center_expansion/005_longest_palindromic_substring.md) |
 | 6. Z 字形变换 | 字符串模拟（不会，背诵模板） | 按行保存的字符串数组 | [C++](algorithms/string_simulation/006_zigzag_conversion.cpp) | [题解总结](algorithms/string_simulation/006_zigzag_conversion.md) |
@@ -20,6 +26,7 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 43. 字符串相乘 | 竖式乘法模拟（不会，背诵模板） | 数位数组 | [C++](algorithms/string_simulation/043_multiply_strings.cpp) | [题解总结](algorithms/string_simulation/043_multiply_strings.md) |
 | 11. 盛最多水的容器 | 双指针 | 数组 | [C++](algorithms/two_pointers/011_container_with_most_water.cpp) | [题解总结](algorithms/two_pointers/011_container_with_most_water.md) |
 | 42. 接雨水 | 双指针、前后缀最大值 | 数组 | [C++](algorithms/two_pointers/042_trapping_rain_water.cpp) | [题解总结](algorithms/two_pointers/042_trapping_rain_water.md) |
+| 125. 验证回文串 | 双指针（isalnum、tolower 没用过，待复习） | 字符串 | [C++](algorithms/two_pointers/125_valid_palindrome.cpp) | [题解总结](algorithms/two_pointers/125_valid_palindrome.md) |
 | 56. 合并区间 | 排序、贪心 | 区间数组 | [C++](algorithms/sorting_greedy/056_merge_intervals.cpp) | [题解总结](algorithms/sorting_greedy/056_merge_intervals.md) |
 | 70. 爬楼梯 | 动态规划 | 状态数组或滚动变量 | [C++](algorithms/dynamic_programming/070_climbing_stairs.cpp) | [题解总结](algorithms/dynamic_programming/070_climbing_stairs.md) |
 | 93. 复原 IP 地址 | 回溯分割（不会，背诵模板） | 路径段数组、字符串 | [C++](algorithms/backtracking/093_restore_ip_addresses.cpp) | [题解总结](algorithms/backtracking/093_restore_ip_addresses.md) |
@@ -29,6 +36,7 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 121. 买卖股票的最佳时机 | 动态规划、一次遍历 | 数组、滚动变量 | [C++](algorithms/dynamic_programming/121_best_time_to_buy_and_sell_stock.cpp) | [题解总结](algorithms/dynamic_programming/121_best_time_to_buy_and_sell_stock.md) |
 | 1702. 修改后的最大二进制字符串 | 贪心 | 字符串、计数变量 | [C++](algorithms/sorting_greedy/1702_maximum_binary_string_after_change.cpp) | [题解总结](algorithms/sorting_greedy/1702_maximum_binary_string_after_change.md) |
 | 200. 岛屿数量 | 图遍历（递归 DFS） | 二维网格、递归栈 | [C++](algorithms/graph_traversal/200_number_of_islands.cpp) | [题解总结](algorithms/graph_traversal/200_number_of_islands.md) |
+| 994. 腐烂的橘子 | 多源 BFS（不会，待背诵） | 二维网格、队列 | [C++](algorithms/graph_traversal/994_rotting_oranges.cpp) | [题解总结](algorithms/graph_traversal/994_rotting_oranges.md) |
 | 739. 每日温度 | 单调栈 | 栈、数组 | [C++](algorithms/monotonic_stack/739_daily_temperatures.cpp) | [题解总结](algorithms/monotonic_stack/739_daily_temperatures.md) |
 
 ## 目录约定

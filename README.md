@@ -28,6 +28,7 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 43. 字符串相乘 | 竖式乘法模拟（不会，背诵模板） | 数位数组 | [C++](algorithms/string_simulation/043_multiply_strings.cpp) | [题解总结](algorithms/string_simulation/043_multiply_strings.md) |
 | 11. 盛最多水的容器 | 双指针 | 数组 | [C++](algorithms/two_pointers/011_container_with_most_water.cpp) | [题解总结](algorithms/two_pointers/011_container_with_most_water.md) |
 | 42. 接雨水 | 双指针、前后缀最大值 | 数组 | [C++](algorithms/two_pointers/042_trapping_rain_water.cpp) | [题解总结](algorithms/two_pointers/042_trapping_rain_water.md) |
+| 88. 合并两个有序数组 | 逆向双指针 | 数组 | [C++](algorithms/two_pointers/088_merge_sorted_array.cpp) | [题解总结](algorithms/two_pointers/088_merge_sorted_array.md) |
 | 125. 验证回文串 | 双指针（isalnum、tolower 没用过，待复习） | 字符串 | [C++](algorithms/two_pointers/125_valid_palindrome.cpp) | [题解总结](algorithms/two_pointers/125_valid_palindrome.md) |
 | 56. 合并区间 | 排序、贪心 | 区间数组 | [C++](algorithms/sorting_greedy/056_merge_intervals.cpp) | [题解总结](algorithms/sorting_greedy/056_merge_intervals.md) |
 | 57. 插入区间 | 有序区间扫描、合并（不会，待背诵） | 区间数组 | [C++](algorithms/sorting_greedy/057_insert_interval.cpp) | [题解总结](algorithms/sorting_greedy/057_insert_interval.md) |
@@ -35,6 +36,10 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 70. 爬楼梯 | 动态规划 | 状态数组或滚动变量 | [C++](algorithms/dynamic_programming/070_climbing_stairs.cpp) | [题解总结](algorithms/dynamic_programming/070_climbing_stairs.md) |
 | 63. 不同路径 II | 动态规划（不会，待背诵） | 一维状态数组 | [C++](algorithms/dynamic_programming/063_unique_paths_ii.cpp) | [题解总结](algorithms/dynamic_programming/063_unique_paths_ii.md) |
 | 66. 加一 | 数组模拟（不会，待背诵） | `vector<int>` | [C++](algorithms/array_simulation/066_plus_one.cpp) | [题解总结](algorithms/array_simulation/066_plus_one.md) |
+| 136. 只出现一次的数字 | 位运算（异或） | 数组、整数变量 | [C++](algorithms/bit_manipulation/136_single_number.cpp) | [题解总结](algorithms/bit_manipulation/136_single_number.md) |
+| 146. LRU 缓存 | 哈希表、双向链表（很难不会，需要大量背诵） | `unordered_map`、`list` | [C++](algorithms/hash_table/146_lru_cache.cpp) | [题解总结](algorithms/hash_table/146_lru_cache.md) |
+| 160. 相交链表 | 双指针、链表 | 单链表节点 | [C++](algorithms/linked_list/160_intersection_of_two_linked_lists.cpp) | [题解总结](algorithms/linked_list/160_intersection_of_two_linked_lists.md) |
+| 162. 寻找峰值 | 二分查找 | 数组 | [C++](algorithms/binary_search/162_find_peak_element.cpp) | [题解总结](algorithms/binary_search/162_find_peak_element.md) |
 | 93. 复原 IP 地址 | 回溯分割（不会，背诵模板） | 路径段数组、字符串 | [C++](algorithms/backtracking/093_restore_ip_addresses.cpp) | [题解总结](algorithms/backtracking/093_restore_ip_addresses.md) |
 | 79. 单词搜索 | DFS、回溯（不会，待背诵） | 二维网格、递归栈 | [C++](algorithms/backtracking/079_word_search.cpp) | [题解总结](algorithms/backtracking/079_word_search.md) |
 | 72. 编辑距离 | 二维动态规划（细节不熟，待复习） | 二维状态数组 | [C++](algorithms/dynamic_programming/072_edit_distance.cpp) | [题解总结](algorithms/dynamic_programming/072_edit_distance.md) |

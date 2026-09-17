@@ -5,27 +5,37 @@ using namespace std;
 // 在字符网格中寻找单词，单词字符必须由上下左右相邻单元格依次组成。
 // 一个单元格不能重复使用。
 // 掌握状态：不会，已提供答案模板，待复习背诵。
-// 口诀：找到起点搜四方，匹配标记，失败恢复。
+// 口诀：每格试起点；越界不符退；末字匹配成；标记搜四向，恢复再返回。
 
 class Solution {
     int m = 0, n = 0;
-    string word;
-    vector<vector<char>>* boardPtr = nullptr;
-    int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-    bool dfs(int x, int y, int index) {
-        if (index == static_cast<int>(word.size())) return true;
-        if (x < 0 || x >= m || y < 0 || y >= n) return false;
-        auto& board = *boardPtr;
-        if (board[x][y] != word[index]) return false;
-
-        char saved = board[x][y];
-        board[x][y] = '#'; // 标记已使用，防止同一格重复进入路径。
-        for (const auto& dir : dirs) {
-            if (dfs(x + dir[0], y + dir[1], index + 1)) return true;
+    // 从 (i, j) 开始，能否匹配 word[k] 及后面的字符？
+    bool dfs(vector<vector<char>>& board, const string& word,
+             int i, int j, int k) {
+        // 1. 越界或当前字符不匹配。
+        if (i < 0 || i >= m || j < 0 || j >= n ||
+            board[i][j] != word[k]) {
+            return false;
         }
-        board[x][y] = saved; // 当前方向失败，恢复现场。
-        return index + 1 == static_cast<int>(word.size());
+
+        // 2. 当前字符匹配，而且已经是最后一个字符。
+        if (k == static_cast<int>(word.size()) - 1) return true;
+
+        // 3. 标记当前格已使用；本题字母不会与 '#' 冲突。
+        char saved = board[i][j];
+        board[i][j] = '#';
+
+        // 4. 四个方向寻找下一个字符；|| 遇到成功便停止尝试。
+        bool found =
+            dfs(board, word, i - 1, j, k + 1) ||
+            dfs(board, word, i + 1, j, k + 1) ||
+            dfs(board, word, i, j - 1, k + 1) ||
+            dfs(board, word, i, j + 1, k + 1);
+
+        // 5. 无论成功还是失败，都恢复棋盘，再返回结果。
+        board[i][j] = saved;
+        return found;
     }
 
 public:
@@ -33,11 +43,10 @@ public:
         if (board.empty() || board[0].empty() || word.empty()) return false;
         m = static_cast<int>(board.size());
         n = static_cast<int>(board[0].size());
-        this->word = word;
-        boardPtr = &board;
+        // 每个格子都尝试作为起点。
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                if (dfs(i, j, 0)) return true;
+                if (dfs(board, word, i, j, 0)) return true;
             }
         }
         return false;
@@ -69,12 +78,15 @@ int main() {
     for (size_t i = 0; i < testCases.size(); ++i) {
         vector<vector<char>> board;
         for (const auto& row : testCases[i].rows) board.emplace_back(row.begin(), row.end());
+        const auto original = board;
         bool actual = solution.exist(board, testCases[i].word);
-        bool ok = actual == testCases[i].expected;
+        bool restored = board == original; // 成功和失败路径都必须恢复棋盘。
+        bool ok = actual == testCases[i].expected && restored;
         passed += ok;
         cout << "用例 " << i + 1 << ": word = " << quoted(testCases[i].word)
              << "，预期 = " << boolalpha << testCases[i].expected
-             << "，实际 = " << actual << "，" << (ok ? "PASS" : "FAIL") << '\n';
+             << "，实际 = " << actual << "，棋盘恢复 = " << restored
+             << "，" << (ok ? "PASS" : "FAIL") << '\n';
     }
     cout << "\n通过：" << passed << '/' << testCases.size() << '\n';
     return passed == testCases.size() ? 0 : 1;

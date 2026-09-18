@@ -8,6 +8,8 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 题目 | 算法 | 数据结构 | 代码 | 总结 |
 | --- | --- | --- | --- | --- |
 | 3. 无重复字符的最长子串 | 滑动窗口、双指针 | 哈希表 | [C++](algorithms/sliding_window/003_longest_substring_without_repeating_characters.cpp) | [题解总结](algorithms/sliding_window/003_longest_substring_without_repeating_characters.md) |
+| 438. 找到字符串中所有字母异位词 | 滑动窗口、频次统计 | 26 位频次数组 | [C++](algorithms/sliding_window/438_find_all_anagrams_in_a_string.cpp) | [题解总结](algorithms/sliding_window/438_find_all_anagrams_in_a_string.md) |
+| 560. 和为 K 的子数组 | 前缀和、哈希表 | 前缀和频次表 | [C++](algorithms/prefix_sum/560_subarray_sum_equals_k.cpp) | [题解总结](algorithms/prefix_sum/560_subarray_sum_equals_k.md) |
 | 239. 滑动窗口最大值 | 滑动窗口、单调队列（忘记做法，待背诵） | 双端队列 `deque` | [C++](algorithms/monotonic_queue/239_sliding_window_maximum.cpp) | [题解总结](algorithms/monotonic_queue/239_sliding_window_maximum.md) |
 | 1. 两数之和 | 哈希表查找 | `unordered_map` | [C++](algorithms/hash_table/001_two_sum.cpp) | [题解总结](algorithms/hash_table/001_two_sum.md) |
 | 128. 最长连续序列 | 哈希表 | `unordered_set` | [C++](algorithms/hash_table/128_longest_consecutive_sequence.cpp) | [题解总结](algorithms/hash_table/128_longest_consecutive_sequence.md) |
@@ -33,13 +35,19 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 56. 合并区间 | 排序、贪心 | 区间数组 | [C++](algorithms/sorting_greedy/056_merge_intervals.cpp) | [题解总结](algorithms/sorting_greedy/056_merge_intervals.md) |
 | 57. 插入区间 | 有序区间扫描、合并（不会，待背诵） | 区间数组 | [C++](algorithms/sorting_greedy/057_insert_interval.cpp) | [题解总结](algorithms/sorting_greedy/057_insert_interval.md) |
 | 45. 跳跃游戏 II | 贪心（不熟，待复习） | 数组、边界变量 | [C++](algorithms/sorting_greedy/045_jump_game_ii.cpp) | [题解总结](algorithms/sorting_greedy/045_jump_game_ii.md) |
+| 678. 有效的括号字符串 | 贪心（待背诵） | `low`、`high` 范围变量 | [C++](algorithms/sorting_greedy/678_valid_parenthesis_string.cpp) | [题解总结](algorithms/sorting_greedy/678_valid_parenthesis_string.md) |
 | 70. 爬楼梯 | 动态规划 | 状态数组或滚动变量 | [C++](algorithms/dynamic_programming/070_climbing_stairs.cpp) | [题解总结](algorithms/dynamic_programming/070_climbing_stairs.md) |
 | 63. 不同路径 II | 动态规划（不会，待背诵） | 一维状态数组 | [C++](algorithms/dynamic_programming/063_unique_paths_ii.cpp) | [题解总结](algorithms/dynamic_programming/063_unique_paths_ii.md) |
+| 221. 最大正方形 | 动态规划（没做过，待背诵） | 二维状态数组 | [C++](algorithms/dynamic_programming/221_maximal_square.cpp) | [题解总结](algorithms/dynamic_programming/221_maximal_square.md) |
+| 264. 丑数 II | 动态规划、三指针（不会，待背诵） | 状态数组、三个指针 | [C++](algorithms/dynamic_programming/264_ugly_number_ii.cpp) | [题解总结](algorithms/dynamic_programming/264_ugly_number_ii.md) |
+| 300. 最长递增子序列 | 动态规划（待背诵） | 状态数组 `dp` | [C++](algorithms/dynamic_programming/300_longest_increasing_subsequence.cpp) | [题解总结](algorithms/dynamic_programming/300_longest_increasing_subsequence.md) |
+| 240. 搜索二维矩阵 II | 矩阵楼梯搜索（不会，待背诵） | 二维数组 | [C++](algorithms/matrix_search/240_search_a_2d_matrix_ii.cpp) | [题解总结](algorithms/matrix_search/240_search_a_2d_matrix_ii.md) |
 | 66. 加一 | 数组模拟（不会，待背诵） | `vector<int>` | [C++](algorithms/array_simulation/066_plus_one.cpp) | [题解总结](algorithms/array_simulation/066_plus_one.md) |
 | 136. 只出现一次的数字 | 位运算（异或） | 数组、整数变量 | [C++](algorithms/bit_manipulation/136_single_number.cpp) | [题解总结](algorithms/bit_manipulation/136_single_number.md) |
 | 146. LRU 缓存 | 哈希表、双向链表（很难不会，需要大量背诵） | `unordered_map`、`list` | [C++](algorithms/hash_table/146_lru_cache.cpp) | [题解总结](algorithms/hash_table/146_lru_cache.md) |
 | 160. 相交链表 | 双指针、链表 | 单链表节点 | [C++](algorithms/linked_list/160_intersection_of_two_linked_lists.cpp) | [题解总结](algorithms/linked_list/160_intersection_of_two_linked_lists.md) |
 | 162. 寻找峰值 | 二分查找 | 数组 | [C++](algorithms/binary_search/162_find_peak_element.cpp) | [题解总结](algorithms/binary_search/162_find_peak_element.md) |
+| 704. 二分查找 | 二分查找 | 升序数组 | [C++](algorithms/binary_search/704_binary_search.cpp) | [题解总结](algorithms/binary_search/704_binary_search.md) |
 | 93. 复原 IP 地址 | 回溯分割（不会，背诵模板） | 路径段数组、字符串 | [C++](algorithms/backtracking/093_restore_ip_addresses.cpp) | [题解总结](algorithms/backtracking/093_restore_ip_addresses.md) |
 | 79. 单词搜索 | DFS、回溯（不会，待背诵） | 二维网格、递归栈 | [C++](algorithms/backtracking/079_word_search.cpp) | [题解总结](algorithms/backtracking/079_word_search.md) |
 | 72. 编辑距离 | 二维动态规划（细节不熟，待复习） | 二维状态数组 | [C++](algorithms/dynamic_programming/072_edit_distance.cpp) | [题解总结](algorithms/dynamic_programming/072_edit_distance.md) |
@@ -48,7 +56,9 @@ C++ 刷题练习，按主要算法归类，在题目总结中标注使用的数�
 | 121. 买卖股票的最佳时机 | 动态规划、一次遍历 | 数组、滚动变量 | [C++](algorithms/dynamic_programming/121_best_time_to_buy_and_sell_stock.cpp) | [题解总结](algorithms/dynamic_programming/121_best_time_to_buy_and_sell_stock.md) |
 | 1702. 修改后的最大二进制字符串 | 贪心 | 字符串、计数变量 | [C++](algorithms/sorting_greedy/1702_maximum_binary_string_after_change.cpp) | [题解总结](algorithms/sorting_greedy/1702_maximum_binary_string_after_change.md) |
 | 200. 岛屿数量 | 图遍历（递归 DFS） | 二维网格、递归栈 | [C++](algorithms/graph_traversal/200_number_of_islands.cpp) | [题解总结](algorithms/graph_traversal/200_number_of_islands.md) |
+| 226. 翻转二叉树 | 二叉树 DFS（不会，待背诵） | 二叉树节点、递归栈 | [C++](algorithms/tree_traversal/226_invert_binary_tree.cpp) | [题解总结](algorithms/tree_traversal/226_invert_binary_tree.md) |
 | 994. 腐烂的橘子 | 多源 BFS（不会，待背诵） | 二维网格、队列 | [C++](algorithms/graph_traversal/994_rotting_oranges.cpp) | [题解总结](algorithms/graph_traversal/994_rotting_oranges.md) |
+| 721. 账户合并 | 建图、DFS、哈希表（易背诵） | 邻接表、访问集合 | [C++](algorithms/graph_traversal/721_accounts_merge.cpp) | [题解总结](algorithms/graph_traversal/721_accounts_merge.md) |
 | 739. 每日温度 | 单调栈 | 栈、数组 | [C++](algorithms/monotonic_stack/739_daily_temperatures.cpp) | [题解总结](algorithms/monotonic_stack/739_daily_temperatures.md) |
 
 ## 目录约定

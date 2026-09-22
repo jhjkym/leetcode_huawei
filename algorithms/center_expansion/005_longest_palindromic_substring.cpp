@@ -8,29 +8,33 @@ using namespace std;
 
 class Solution {
 public:
-    void build(int left,int right,string s,int &bestStart,int &bestLength){
-        int length = 0;
-        while(left >= 0 && right <s.size() && s[left] == s[right]){
-            left --;
-            right ++;
-            length = right-left-1;
+    string longestPalindrome(string s) {
+        int start = 0;
+        int maxLength = 1;
+        int n = s.size();
+
+        for (int i = 0; i < n; i++) {
+            expand(s, i, i, start, maxLength);
+            expand(s, i, i + 1, start, maxLength);
         }
 
-        if(length > bestLength){
-            bestLength = length;
-            bestStart = left+1;
-        }
+        return s.substr(start, maxLength);
     }
 
-    string longestPalindrome(string s) {
-        int bestStart = 0;
-        int bestLength = 1;
-        for(int i = 0;i < s.size();i++){
-            build(i,i,s,bestStart,bestLength);
-            build(i,i+1,s,bestStart,bestLength);
-
+private:
+    void expand(const string& s, int left, int right,
+                int& start, int& maxLength) {
+        int n = s.size();
+        while (left >= 0 && right < n && s[left] == s[right]) {
+            left--;
+            right++;
         }
-        return s.substr(bestStart,bestLength);
+
+        int length = right - left - 1;
+        if (length > maxLength) {
+            start = left + 1;
+            maxLength = length;
+        }
     }
 };
 

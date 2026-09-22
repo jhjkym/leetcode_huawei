@@ -2,45 +2,32 @@
 using namespace std;
 
 // 146. LRU 缓存
-// 哈希表负责 O(1) 找到 key，双向链表负责 O(1) 调整最近使用顺序。
-// 链表头部是最近使用，尾部是最久未使用。
-// 掌握状态：很难不会，需要大量背诵。
-// 口诀：访问移到头，新增放到头；超容量删尾巴。
+// 哈希表负责 O(1) 找到节点，list 维护最近使用顺序。
+// 口诀：旧的先删除，新的放开头；超容量删尾巴。
 
 class LRUCache {
-    using Node = pair<int, int>; // key, value
-    int capacity;
-    list<Node> cache; // front 最近使用，back 最久未使用
-    unordered_map<int, list<Node>::iterator> table;
-
-    void moveToFront(list<Node>::iterator it) {
-        cache.splice(cache.begin(), cache, it); // O(1) 移动节点，不复制数据。
-    }
+    size_t capacity;
+    list<pair<int, int>> cache;
+    unordered_map<int, list<pair<int, int>>::iterator> position;
 
 public:
     LRUCache(int capacity) : capacity(capacity) {}
 
     int get(int key) {
-        auto it = table.find(key);
-        if (it == table.end()) return -1;
-        moveToFront(it->second);
-        return it->second->second;
+        if (position.count(key) == 0) return -1;
+        int value = position[key]->second;
+        put(key, value);
+        return value;
     }
 
     void put(int key, int value) {
-        auto it = table.find(key);
-        if (it != table.end()) {
-            it->second->second = value; // 更新值，同时刷新为最近使用。
-            moveToFront(it->second);
-            return;
-        }
+        if (position.count(key)) cache.erase(position[key]);
 
         cache.push_front({key, value});
-        table[key] = cache.begin();
-
-        if (static_cast<int>(cache.size()) > capacity) {
+        position[key] = cache.begin();
+        if (cache.size() > capacity) {
             int oldKey = cache.back().first;
-            table.erase(oldKey);
+            position.erase(oldKey);
             cache.pop_back();
         }
     }

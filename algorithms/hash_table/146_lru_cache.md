@@ -3,70 +3,79 @@
 - 算法分类：哈希表、双向链表。
 - 数据结构：`unordered_map` + `list`。
 - 对应代码：[146_lru_cache.cpp](./146_lru_cache.cpp)。
-- 掌握状态：**很难不会，需要大量背诵。**
+- 掌握状态：最简背诵模板。
 
-## 背诵模板
-
-哈希表保存 `key -> 链表节点迭代器`，用于 `O(1)` 找到缓存；双向链表维护使用顺序，头部是最近使用，尾部是最久未使用。
+## 背诵答案
 
 ```cpp
 class LRUCache {
-    using Node = pair<int, int>;
-    int capacity;
-    list<Node> cache;
-    unordered_map<int, list<Node>::iterator> table;
-
-    void moveToFront(list<Node>::iterator it) {
-        cache.splice(cache.begin(), cache, it);
-    }
+    size_t capacity;
+    list<pair<int, int>> cache;
+    unordered_map<int, list<pair<int, int>>::iterator> position;
 
 public:
     LRUCache(int capacity) : capacity(capacity) {}
 
     int get(int key) {
-        auto it = table.find(key);
-        if (it == table.end()) return -1;
-        moveToFront(it->second);
-        return it->second->second;
+        if (position.count(key) == 0) return -1;
+        int value = position[key]->second;
+        put(key, value);
+        return value;
     }
 
     void put(int key, int value) {
-        auto it = table.find(key);
-        if (it != table.end()) {
-            it->second->second = value;
-            moveToFront(it->second);
-            return;
-        }
+        if (position.count(key)) cache.erase(position[key]);
+
         cache.push_front({key, value});
-        table[key] = cache.begin();
+        position[key] = cache.begin();
+
         if (cache.size() > capacity) {
             int oldKey = cache.back().first;
-            table.erase(oldKey);
+            position.erase(oldKey);
             cache.pop_back();
         }
     }
 };
 ```
 
-**口诀：访问移到头，新增放到头；超容量删尾巴。**
+## 背诵口诀
 
-## 操作过程
+> 旧的先删除，新的放开头；
+> 超容量删尾巴；`get` 调 `put` 刷新位置。
 
-- `get(key)`：找不到返回 `-1`；找到后把节点移到头部并返回 value。
-- `put(key,value)`：key 已存在则更新 value 并移到头部；key 不存在则在头部插入。超过容量时删除尾部节点，并从哈希表删除它的 key。
+`cache` 中每个元素是 `{key, value}`：
 
-`list::splice` 可以在 `O(1)` 时间内移动链表节点，节点地址和迭代器保持有效，因此哈希表中的迭代器不需要更新。
+- `front` 是最近使用；
+- `back` 是最久未使用。
+
+`position` 保存 `key -> list 迭代器`，用于 `O(1)` 找到并删除节点。
+
+## 只记 `put`
+
+存在旧节点就先删除，然后无论更新还是新增，都统一放到链表头部：
+
+```cpp
+if (position.count(key)) cache.erase(position[key]);
+cache.push_front({key, value});
+position[key] = cache.begin();
+```
+
+超过容量就删除尾部，同时删除哈希表记录：
+
+```cpp
+int oldKey = cache.back().first;
+position.erase(oldKey);
+cache.pop_back();
+```
+
+`get` 找到 value 后调用一次 `put(key, value)`，直接复用刷新逻辑。
 
 ## 易错点
 
-- 哈希表存的是链表迭代器，不是 value；这样才能在 `O(1)` 时间定位并移动节点。
-- `get` 也会改变最近使用顺序，不能只返回 value。
-- 更新已有 key 时不能新增节点，否则会出现重复 key。
-- 淘汰前先读取 `cache.back().first`，再从哈希表删除，最后 `pop_back()`。
-- `cache.begin()` 是最近使用位置，`cache.end()` 不能解引用。
-- 本题容量为正数；每次插入后最多保留 `capacity` 个节点。
-
-## 复杂度
+- `get` 也算一次使用，必须刷新位置。
+- 更新已有 key 时要先删除旧节点，避免出现重复 key。
+- 头插后要更新 `position[key]`。
+- 淘汰时必须同时删除哈希表和链表中的记录。
 
 `get` 和 `put` 的平均时间复杂度都是 `O(1)`，空间复杂度为 `O(capacity)`。
 

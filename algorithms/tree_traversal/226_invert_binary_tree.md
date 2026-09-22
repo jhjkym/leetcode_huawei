@@ -1,18 +1,16 @@
 # 226. 翻转二叉树
 
-## 提交记录
-
-- 题号：226
-- 题目：翻转二叉树
-- 掌握状态：**不会，已提供答案模板，待复习背诵。**
-- 代码：[226_invert_binary_tree.cpp](./226_invert_binary_tree.cpp)
+- 算法分类：二叉树、递归 DFS。
+- 数据结构：二叉树、递归栈。
+- 对应代码：[226_invert_binary_tree.cpp](./226_invert_binary_tree.cpp)。
+- 掌握状态：二叉树递归模板。
 
 ## 题解
 
 给定一棵二叉树，将每个节点的左子树和右子树交换，返回翻转后的根节点。
 可以使用递归 DFS 或队列 BFS。练习时先完成递归版本：空节点直接返回；交换左右子树后递归处理新的左右子树。
 
-**口诀：空节点返回；左右先交换；再递归两边。**
+**口诀：空节点返回；交换左右；递归两边。**
 
 ## 代码
 
@@ -20,17 +18,10 @@
 
 ```cpp
 TreeNode* invertTree(TreeNode* root) {
-    // 空节点没有左右子树，不需要处理
-    if (root == nullptr) return nullptr;
-
-    // 翻转当前节点
+    if (!root) return nullptr;
     swap(root->left, root->right);
-
-    // 翻转左右子树
     invertTree(root->left);
     invertTree(root->right);
-
-    // 返回翻转后的当前根节点
     return root;
 }
 ```

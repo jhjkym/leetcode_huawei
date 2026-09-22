@@ -3,7 +3,7 @@
 - 算法分类：DFS、回溯。
 - 数据结构：二维字符网格、递归栈。
 - 对应代码：[079_word_search.cpp](./079_word_search.cpp)。
-- 掌握状态：**不会，已提供答案模板，待复习背诵。**
+- 掌握状态：网格回溯模板。
 
 ## 背诵模板
 
@@ -13,13 +13,13 @@
 
 ```cpp
 class Solution {
-    int m = 0, n = 0;
+    int m = 0, n = 0, length = 0;
 
     bool dfs(vector<vector<char>>& board, const string& word,
              int i, int j, int k) {
         if (i < 0 || i >= m || j < 0 || j >= n ||
             board[i][j] != word[k]) return false;
-        if (k == static_cast<int>(word.size()) - 1) return true;
+        if (k == length - 1) return true;
 
         char saved = board[i][j];
         board[i][j] = '#';
@@ -34,8 +34,9 @@ class Solution {
 public:
     bool exist(vector<vector<char>>& board, string word) {
         if (board.empty() || board[0].empty() || word.empty()) return false;
-        m = static_cast<int>(board.size());
-        n = static_cast<int>(board[0].size());
+        m = board.size();
+        n = board[0].size();
+        length = word.size();
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (dfs(board, word, i, j, 0)) return true;

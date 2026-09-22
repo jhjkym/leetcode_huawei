@@ -2,9 +2,7 @@
 using namespace std;
 
 // 226. 翻转二叉树
-// 将每个节点的左右子树交换，返回翻转后的根节点。
-// 掌握状态：不会，已提供答案模板，待复习背诵。
-// 口诀：空节点返回；左右先交换；再递归两边。
+// 递归交换每个节点的左右子树。
 
 struct TreeNode {
     int val;
@@ -16,19 +14,10 @@ struct TreeNode {
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        // 空树没有节点可以翻转，直接返回空指针。
         if (root == nullptr) return nullptr;
-
-        // 交换当前节点的左右孩子。
-        // 例如原来 root->left 是左子树，交换后就变成右子树。
         swap(root->left, root->right);
-
-        // 继续翻转交换后的左子树和右子树。
-        // 递归会对每个节点执行同样的“交换左右孩子”操作。
         invertTree(root->left);
         invertTree(root->right);
-
-        // 当前节点及其两棵子树都已翻转，返回当前根节点。
         return root;
     }
 };
